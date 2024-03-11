@@ -3,21 +3,39 @@ import Header from './components/Header'
 import Image from './components/Image'
 import logo from "./img/image.jpg"
 class App extends React.Component {
-  helpText = "Help text!"
+  constructor(props) {
+    // eslint-disable-next-line no-undef
+    super(props)
+    this.state = {
+      helpText: "Help text!",
+      userData: "",
+    }
+    this.inputClick = this.inputClick.bind(this)
+  }
+
+  //helpText = "Help text!"
   render() {
     return (<div className="name">
     <Header title="Шапка сайта"/>
     <Header title="Шапка сайта!!"/>
-    <h1>{this.helpText}</h1>
+    <h1>{this.state.helpText}</h1>
+    <h2>{this.state.userData}</h2>
     <input placeholder={this.helpText}
-        onClick={this.inputClick} onMouseEnter={this.mouseOver} />
-    <p>{this.helpText === "Help text!" ? "Yes" : "No"}</p>
+        onChange={event => this.setState({userData: event.target.value})}
+        onClick={this.inputClick} 
+        onMouseEnter={this.mouseOver}
+         />
+    <p>{this.state.helpText === "Help text!" ? "Yes" : "No"}</p>
     <Image image={logo} />
-    <img src={logo} alt="text 3"/>
+    <img src={logo} alt="text 3"/> 
+    //Вариант подключения
   </div>)
   }
   
   inputClick(){
+    this.setState({
+      helpText:"Changed"
+    })
     console.log("Clicked")
   }
 
