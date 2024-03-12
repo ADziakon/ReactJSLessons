@@ -20,10 +20,23 @@ class Users extends React.Component {
     }
   ]
   render() {
+    if(this.users.length >0 )
+        return (
+        <div>
+            {this.users.map((el) => (
+                <div className="user" key={el.id}>
+                    <h3>{el.firstname} {el.lastname}</h3>
+                    <p>{el.bio}</p>
+                    <b>{el.isHappy ? "Счастлив" : "Не особо"}</b>
+                </div>
+            ))}
+        </div>
+        )
+    else 
     return (
-      <header className="header">
-        {this.props.title}
-      </header>
+        <div className = "user">
+            <h3>Пользователей нет</h3>
+        </div>
     )
   }
 
