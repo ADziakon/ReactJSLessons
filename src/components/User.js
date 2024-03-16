@@ -1,5 +1,5 @@
 import React from "react";
-import {IoCloseCircleSharp} from 'react-icons/io5'
+import {IoCloseCircleSharp, IoHammerSharp} from 'react-icons/io5'
 class User extends React.Component {
     user = this.props.user
   render() {
@@ -7,6 +7,7 @@ class User extends React.Component {
         
         <div className="user" >
             <IoCloseCircleSharp className="delete-icon" />
+            <IoHammerSharp className="edit-icon" />
             <h3>{this.user.firstname} {this.user.lastname}</h3>
             <p>{this.user.bio}</p>
             <b>{this.user.isHappy ? "Счастлив" : "Не особо"}</b>
