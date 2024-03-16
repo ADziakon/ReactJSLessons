@@ -1,6 +1,7 @@
 import React from "react";
 import Header from './components/Header'
 import Users from "./components/Users";
+import AddUser from "./components/AddUser";
 class App extends React.Component {
 
   //helpText = "Help text!"
@@ -10,7 +11,9 @@ class App extends React.Component {
     <main>
       <Users />
     </main>
-    <aside></aside>
+    <aside>
+      <AddUser />
+    </aside>
   </div>)
   }
   
